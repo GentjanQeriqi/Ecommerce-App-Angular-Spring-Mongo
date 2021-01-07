@@ -24,7 +24,7 @@ import com.bezkoder.spring.data.mongodb.repository.GamesRepo;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
-public class TutorialController {
+public class GameController {
 
   @Autowired
   GamesRepo gamesRepo;

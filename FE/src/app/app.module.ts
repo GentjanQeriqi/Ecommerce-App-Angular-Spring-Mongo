@@ -10,10 +10,17 @@ import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +29,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatDialogModule,
     MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
