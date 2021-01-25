@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
+   // let username =  this.tokenStorage.getUser();
+   //  console.log(username.username);
+   //
   }
 
   onSubmit(): void {

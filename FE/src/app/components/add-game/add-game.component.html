@@ -49,6 +49,12 @@
         <br>
         <br>
         <button  type="button" (click)="performUpload()"><i class="fa fa-upload" aria-hidden="true"></i> Upload</button>
+        <br>
+        <br>
+        <div class="alert alert-success" role="alert" *ngIf="isUploaded">
+            Image Uploaded Succesfuly
+        </div>
+        <br>
       </form>
       <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
     </div>

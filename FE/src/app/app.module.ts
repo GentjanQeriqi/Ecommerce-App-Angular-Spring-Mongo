@@ -14,13 +14,23 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import { DialogComponent } from './components/dialog/dialog.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DialogComponent,
+    OrdersComponent,
+    MyOrdersComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -28,8 +38,11 @@ import {MatDialogModule} from "@angular/material/dialog";
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+
     MatCardModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,

@@ -22,7 +22,16 @@
           name="description"
         />
       </div>
-
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          [(ngModel)]="currentGame.price"
+          name="price"
+        />
+      </div>
 
       <div class="form-group">
         <label><strong>Status:</strong></label>

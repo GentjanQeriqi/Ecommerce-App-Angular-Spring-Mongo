@@ -10,6 +10,7 @@ export class AddGameComponent implements OnInit {
   public selectedFile: File = null;
   public imageSrc: string;
   public formData = new FormData();
+  public isUploaded = false;
   _game = {
     title: '',
     description: '',
@@ -23,6 +24,7 @@ export class AddGameComponent implements OnInit {
   constructor(private tutorialService: GamesService) { }
 
   ngOnInit(): void {
+
   }
 
   saveTutorial(): void {
@@ -75,6 +77,7 @@ export class AddGameComponent implements OnInit {
       res => {
         this.imageSrc = res;
         console.log(this.imageSrc)
+        this.isUploaded = true;
 
         // return this.imageSrc = null;
       }

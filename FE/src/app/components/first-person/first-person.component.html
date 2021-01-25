@@ -7,9 +7,11 @@
       <img mat-card-image src="{{data.filePath}}" />
       <mat-card-content>
         <p>{{data.description}}</p>
+        <p align="right">{{data.price | currency}} </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LIKE</button> <button mat-button>SHARE</button>
+        <button mat-button (click)="openDialog(data.id)">BUY</button> <button mat-button>SHARE</button>
+
       </mat-card-actions>
     </mat-card>
   </div>

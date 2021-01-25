@@ -5,6 +5,7 @@ import {FirstPersonComponent} from "./first-person.component";
 import {MatCardModule} from "@angular/material/card";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonModule} from "@angular/material/button";
+import {DialogComponent} from "../dialog/dialog.component";
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [FirstPersonComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), MatCardModule, FlexLayoutModule, MatButtonModule]
+  imports: [CommonModule, RouterModule.forChild(routes), MatCardModule, FlexLayoutModule, MatButtonModule],
+  entryComponents: [DialogComponent]
 
 })
 // @ts-ignore

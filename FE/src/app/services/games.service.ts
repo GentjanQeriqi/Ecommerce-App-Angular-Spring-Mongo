@@ -15,6 +15,18 @@ export class GamesService {
     return this.http.get(baseUrl);
   }
 
+  addToCart(payload) {
+    return this.http.post(`${baseUrl}/cart`, payload);
+  }
+
+  getCartItems() {
+    return this.http.get(`${baseUrl}/cart`);
+  }
+
+  increaseQty(payload) {
+    return this.http.post(`${baseUrl}/cart`, payload);
+  }
+
   get(id): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
@@ -44,4 +56,6 @@ export class GamesService {
     const url = this.baseUrl + `/upload?file=${file.name}`;
     return this.http.post(url, formData , {responseType: 'text'});
   }
+
+
 }

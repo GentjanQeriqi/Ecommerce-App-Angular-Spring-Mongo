@@ -24,6 +24,7 @@ import com.bezkoder.spring.data.mongodb.repository.GamesRepo;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
+
 public class GameController {
 
   @Autowired
@@ -63,8 +64,6 @@ public class GameController {
     }
   }
 
-  
-
   @PostMapping("/games")
   public ResponseEntity<Games> createGames(@RequestBody Games games) {
     try {
@@ -81,7 +80,6 @@ public class GameController {
     }
   }
 
-
   @PutMapping("/games/{id}")
   public ResponseEntity<Games> updateGame(@PathVariable("id") String id, @RequestBody Games games) {
     Optional<Games> gameData = gamesRepo.findById(id);
@@ -91,6 +89,7 @@ public class GameController {
       _tutorial.setTitle(games.getTitle());
       _tutorial.setDescription(games.getDescription());
       _tutorial.setPublished(games.isPublished());
+      _tutorial.setPrice(games.getPrice());
       return new ResponseEntity<>(gamesRepo.save(_tutorial), HttpStatus.OK);
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);

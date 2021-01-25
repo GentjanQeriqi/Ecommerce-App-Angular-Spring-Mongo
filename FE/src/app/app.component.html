@@ -11,6 +11,9 @@
       <li class="nav-item" *ngIf="showModeratorBoard">
         <a routerLink="AddGames" class="nav-link">Add Games</a>
       </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a routerLink="orders" class="nav-link">Orders</a>
+      </li>
       <li class="nav-item">
         <a routerLink="RPG" class="nav-link">Rpg</a>
       </li>
@@ -34,10 +37,12 @@
         </li>
       </ul>
 
-
       <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
         <li class="nav-item">
           <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        </li>
+        <li class="nav-item">
+          <a href="/my-orders" class="nav-link" routerLink="my-orders">My Orders</a>
         </li>
         <li class="nav-item">
           <a href class="nav-link" (click)="logout()">LogOut</a>
@@ -50,4 +55,5 @@
   <div class="container mt-3">
     <router-outlet></router-outlet>
   </div>
+
 </div>

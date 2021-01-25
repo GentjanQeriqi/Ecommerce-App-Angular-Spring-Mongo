@@ -44,6 +44,7 @@ export class GamesDetailsComponent implements OnInit {
       .subscribe(
         response => {
           this.currentGame.published = status;
+
           console.log(response);
         },
         error => {
@@ -52,6 +53,7 @@ export class GamesDetailsComponent implements OnInit {
   }
 
   updateTutorial(): void {
+
     this.service.update(this.currentGame.id, this.currentGame)
       .subscribe(
         response => {

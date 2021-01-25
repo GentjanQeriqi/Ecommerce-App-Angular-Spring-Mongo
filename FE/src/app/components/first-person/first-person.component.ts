@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {GamesService} from "../../services/games.service";
+import {publish} from "rxjs/operators";
+import {MatDialog} from "@angular/material/dialog";
+import {DialogComponent} from "../dialog/dialog.component";
 
 @Component({
   selector: 'app-first-person',
@@ -7,14 +10,30 @@ import {GamesService} from "../../services/games.service";
   styleUrls: ['./first-person.component.css']
 })
 export class FirstPersonComponent implements OnInit {
-
-
+  currentGame =  null;
+  dialogValue: string;
+  sendValue: string;
   data = new Array();
-  constructor(private service: GamesService) { }
+  constructor(private service: GamesService, public dialog: MatDialog) { }
+
+    openDialog(id): void {
+      this.service.get(id).subscribe(data =>{
+        this.currentGame = data;
+
+        const dialogRef = this.dialog.open(DialogComponent, {
+          width: '250px',
+          backdropClass: 'custom-dialog-backdrop-class',
+          panelClass: 'custom-dialog-panel-class',
+          data: { _game: this.currentGame }
+
+        });
+      });
+    }
 
   ngOnInit(): void {
 
     this.getData();
+
   }
 
   getData(){
@@ -22,12 +41,23 @@ export class FirstPersonComponent implements OnInit {
 
 
       income.forEach(obj => {
-        if (obj.categories === 'First-Person' ){
+        if (obj.categories === 'First-Person'){
           this.data.push(obj);
         }
       })
       console.log(this.data);
     })
+  }
+
+  _addItemToCart( id, quantity): void {
+    let payload = {
+      productId: id,
+      quantity,
+    };
+    this.service.addToCart(payload).subscribe(() => {
+      this.getData();
+      alert('Product Added');
+    });
   }
 
 }
